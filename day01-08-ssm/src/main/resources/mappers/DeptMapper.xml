@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+	<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+		"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+		<!-- namespace表示命名空间，值是唯一的并且为接口的名称 
+		实现类不需要写，mybatis框架会自定生成接口的实现类 -->
+	<mapper namespace="com.bridgeleed.ssm.dao.DeptDao">
+	
+	<insert id="insertDept" parameterType="com.bridgeleed.ssm.bean.Dept" >
+	 insert into dept(
+	  dept_name,dept_loc
+	 )values(
+	 #{deptName},#{deptLoc}
+	 )
+	</insert>
+	
+	
+	<select id="selectAll" resultType="com.bridgeleed.ssm.bean.Dept">
+	  select  id,dept_name deptName,dept_loc deptLoc from dept
+	</select>
+	  
+	</mapper>
+	
+	
+	
+	
+	
+	
+	
+	
+	
